@@ -2,6 +2,9 @@
 using Microsoft.Owin;
 using Owin;
 using SpotifyReact.Api;
+using System.IO;
+using Microsoft.Owin.FileSystems;
+using Microsoft.Owin.StaticFiles;
 
 [assembly: OwinStartup(typeof(Startup1))]
 
@@ -12,17 +15,14 @@ namespace SpotifyReact.Api
         public void Configuration(IAppBuilder app)
         {
             app.UseErrorPage();
+            string root = AppDomain.CurrentDomain.BaseDirectory;
 
-            app.Run(context =>
+            app.UseFileServer(new FileServerOptions
             {
-                if (context.Request.Path.ToString() == "/fail")
-                {
-                    throw new Exception("Random exception");
-                }
-
-                context.Response.ContentType = "text/plain";
-                return context.Response.WriteAsync("Hello, world.");
-            });
+                FileSystem = new PhysicalFileSystem(Path.Combine(root, "web")),
+                RequestPath = new PathString(),
+                EnableDirectoryBrowsing = true
+            });            
         }
     }
 }
