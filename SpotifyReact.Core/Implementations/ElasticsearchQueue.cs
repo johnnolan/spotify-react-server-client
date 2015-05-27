@@ -15,7 +15,10 @@ namespace SpotifyReact.Core.Implementations
 
         public ElasticsearchQueue()
         {
-            Client = new ElasticClient();
+            var settings = new ConnectionSettings(
+                defaultIndex: "spotifyreact-queue"
+            );
+            Client = new ElasticClient(settings);
         }
 
         public List<QueueEntry> AddSongToQueue(int queueId, Song song)
@@ -29,7 +32,8 @@ namespace SpotifyReact.Core.Implementations
             {
                 Id = Guid.NewGuid(),
                 QueueName = queueName,
-                Added = DateTime.Now
+                Added = DateTime.Now,
+                Entries = new List<QueueEntry>()
             };
 
             Client.IndexAsync<Queue>(queue);
