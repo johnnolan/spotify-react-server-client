@@ -1,8 +1,8 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 2012
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SpotifyReact.Api", "SpotifyReact.Api\SpotifyReact.Api.csproj", "{1E2CB444-1934-4A88-94E5-F9411FE74B4E}"
-EndProject
+# Visual Studio 14
+VisualStudioVersion = 14.0.22609.0
+MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".nuget", ".nuget", "{6A841E69-3F7C-4F82-97F7-443D2B523664}"
 	ProjectSection(SolutionItems) = preProject
 		.nuget\NuGet.Config = .nuget\NuGet.Config
@@ -12,20 +12,22 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".nuget", ".nuget", "{6A841E
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SpotifyReact.Server", "SpotifyReact.Server\SpotifyReact.Server.csproj", "{E115F747-7F45-45A4-BE41-F2852CD23072}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SpotifyReact.Core", "SpotifyReact.Core\SpotifyReact.Core.csproj", "{C394580F-BF24-457D-959A-73FA7F4833EE}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{1E2CB444-1934-4A88-94E5-F9411FE74B4E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{1E2CB444-1934-4A88-94E5-F9411FE74B4E}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{1E2CB444-1934-4A88-94E5-F9411FE74B4E}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{1E2CB444-1934-4A88-94E5-F9411FE74B4E}.Release|Any CPU.Build.0 = Release|Any CPU
 		{E115F747-7F45-45A4-BE41-F2852CD23072}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{E115F747-7F45-45A4-BE41-F2852CD23072}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{E115F747-7F45-45A4-BE41-F2852CD23072}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{E115F747-7F45-45A4-BE41-F2852CD23072}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C394580F-BF24-457D-959A-73FA7F4833EE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C394580F-BF24-457D-959A-73FA7F4833EE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C394580F-BF24-457D-959A-73FA7F4833EE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C394580F-BF24-457D-959A-73FA7F4833EE}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

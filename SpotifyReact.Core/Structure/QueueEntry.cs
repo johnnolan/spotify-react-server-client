@@ -8,7 +8,8 @@ namespace SpotifyReact.Core.Structure
 {
     public class QueueEntry
     {
-        public int Id { get; set; }
+        public Guid Id { get; set; }
+        public Guid QueueId { get; set; }
         public int Votes { get; set; }
         public Song Song { get; set; }
         public DateTime Added { get; set; }

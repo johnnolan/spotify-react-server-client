@@ -1,5 +1,4 @@
 ﻿using System;
-using SpotifyReact.Api;
 
 namespace SpotifyReact.Server
 {

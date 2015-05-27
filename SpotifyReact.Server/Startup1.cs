@@ -1,14 +1,15 @@
 ﻿using System;
 using Microsoft.Owin;
 using Owin;
-using SpotifyReact.Api;
 using System.IO;
 using Microsoft.Owin.FileSystems;
 using Microsoft.Owin.StaticFiles;
+using System.Web.Http;
+using SpotifyReact.Server;
 
 [assembly: OwinStartup(typeof(Startup1))]
 
-namespace SpotifyReact.Api
+namespace SpotifyReact.Server
 {
     public class Startup1
     {
@@ -22,7 +23,16 @@ namespace SpotifyReact.Api
                 FileSystem = new PhysicalFileSystem(Path.Combine(root, "web")),
                 RequestPath = new PathString(),
                 EnableDirectoryBrowsing = true
-            });            
+            });
+
+            HttpConfiguration config = new HttpConfiguration();
+            config.Routes.MapHttpRoute(
+                name: "DefaultApi",
+                routeTemplate: "api/{controller}/{id}",
+                defaults: new { id = RouteParameter.Optional }
+            );
+
+            app.UseWebApi(config);
         }
     }
 }
